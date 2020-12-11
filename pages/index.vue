@@ -1,7 +1,7 @@
 <template>
-    <div class="font-sans antialiased w-screen flex">
+    <div class="font-sans antialiased w-screen h-screen flex">
 
-    <div class="bg-indigo-darker text-purple-lighter flex-none w-64 pb-6 hidden md:block">
+    <div class="bg-gray-800 text-purple-lighter flex-none w-100 pb-6 hidden md:block">
         <div class="text-white mb-2 mt-3 px-4 flex justify-between">
             <div class="flex-auto">
                 <h1 class="font-semibold text-xl leading-tight mb-1 truncate">Monju CSS</h1>
@@ -18,28 +18,45 @@
         </div>
         <div class="mb-8">
             <div class="px-4 mb-2 text-white flex justify-between items-center">
-                <div class="opacity-75">Channels</div>
-                <div>
-                    <svg class="fill-current h-4 w-4 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" />
-                    </svg>
-                </div>
+                <div class="opacity-75"> 
+                    <svg class="inline-flex w-6 h-6 text-blue-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>Programming Boot Camp</div>
+                <svg class="inline-flex w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                </svg>
             </div>
-            <div class="bg-teal-dark py-1 px-4 text-white"># programming boot camp</div>
+            <div class="bg-teal-dark py-1 px-10 text-white"># In the class</div>
+            <div class="py-1 px-10 text-white"># Qestions to Professor</div>
+            <div class="py-1 px-10 text-white"># Discussion with students</div>
+            <div class="px-4 mb-2 text-white flex justify-between items-center">
+                <div class="opacity-75"> 
+                    <svg class="inline-flex w-6 h-6 text-blue-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                    Professional and Value Creation 
+                </div>
+                <svg class="inline-flex w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                </svg>
+            </div>
+            <div class="py-1 px-10 text-white"># In the class</div>
+            <div class="py-1 px-10 text-white"># Qestions to Professor</div>
+            <div class="py-1 px-10 text-white"># Discussion with students</div>
         </div>
         
     </div>
     <!-- Chat content -->
-    <div class="flex-1 flex flex-col bg-white overflow-hidden">
+    <div class="flex-1 flex flex-col bg-gray-900 overflow-hidden">
         <!-- Top bar -->
         <div class="border-b flex px-6 py-2 items-center flex-none">
             <div class="flex flex-col">
-                <h3 class="text-grey-darkest mb-1 font-extrabold">#general</h3>
-                <div class="text-grey-dark text-sm truncate">
-                    Chit-chattin' about ugly HTML and mixing of concerns.
+                <h3 class="text-white mb-1 font-extrabold">#In the class</h3>
+                <div class="text-grey text-sm truncate">
+                    Ask anything you want
                 </div>
             </div>
-            <div class="ml-auto hidden md:block">
+            <!--これがSearchのとこ <div class="ml-auto hidden md:block">
                 <div class="relative">
                     <input type="search" placeholder="Search" class="appearance-none border border-grey rounded-lg pl-8 pr-4 py-2">
                     <div class="absolute pin-y pin-l pl-3 flex items-center justify-center">
@@ -48,7 +65,7 @@
                         </svg>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <!-- Chat messages -->
         <div class="px-6 py-4 flex-1 overflow-y-scroll">
@@ -57,10 +74,30 @@
                 <!--<img src="https://pbs.twimg.com/profile_images/875010472105222144/Pkt9zqPY_400x400.jpg" class="w-10 h-10 rounded mr-3"> -->
                 <div class="flex-1 overflow-hidden">
                     <div>
-                        <span class="font-bold">Yamashita</span>
+                        <span class="text-white font-bold">Yamashita</span>
                         <span class="text-grey text-xs">12/11 11:46</span>
                     </div>
-                    <p class="text-black leading-normal">I'm alone</p>
+                    <p class="text-white leading-normal">I'm alone</p>
+                    <div>
+                    <svg class="fill-current h-4 w-4 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" />
+                    </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-start mb-4 text-sm">
+                <!--<img src="https://pbs.twimg.com/profile_images/875010472105222144/Pkt9zqPY_400x400.jpg" class="w-10 h-10 rounded mr-3"> -->
+                <div class="flex-1 overflow-hidden">
+                    <div>
+                        <span class="text-white font-bold">Monju (reply)</span>
+                        <span class="text-grey text-xs">12/11 11:46</span>
+                    </div>
+                    <p class="text-white leading-normal">We are three </p>
+                    <div>
+                    <svg class="fill-current h-4 w-4 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" />
+                    </svg>
+                    </div>
                 </div>
             </div>
         </div>
@@ -69,7 +106,7 @@
                 <span class="text-3xl text-grey border-r-2 border-grey p-2">
                     <svg class="fill-current h-6 w-6 block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/></svg>
                   </span>
-                <input type="text" class="w-full px-4" placeholder="Message #general" />
+                <input type="text" class="w-full px-4 bg-gray-900 text-white" placeholder="Message #In the class" />
             </div>
         </div>
     </div>
