@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Template Project</h1>
+    <nuxt />
   </div>
 </template>
 

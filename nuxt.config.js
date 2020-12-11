@@ -19,7 +19,17 @@ export default {
         content: process.env.npm_package_description || '',
       },
     ],
+    bodyAttrs: {
+      class: 'h-screen overflow-hidden flex items-center justify-center',
+      style: 'background: #edf2f7'
+    },
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      {
+        rel: 'stylesheet',
+        href: 'https://unpkg.com/tailwindcss@0.3.0/dist/tailwind.min.css'
+      }
+    ]
   },
   /*
    ** Global CSS
