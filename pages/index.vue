@@ -88,17 +88,24 @@
         </div>
         <!-- Chat messages -->
         <div class="px-6 py-4 flex-1 overflow-y-scroll">
-            <!-- A message -->
-            <div class="flex items-start mb-4 text-sm">
+            <!-- A message v-for 使ってmessagesのデータをmessageという新規変数に組み込まないと取り出せない.
+            v-forを使って、messageにstateの中のmessagesデータを入れる。
+            messageIdには、長いIDが入る。
+            またv-forを使っているので、messages(元データ)に新規メッセージが追加されれば、それも自動的に繰り返され、表示される。
+            -->
+            <div
+              v-for="(message, messageId) in state.messages"
+              :key="messageId"
+              class="flex items-start mb-4 text-sm">
                 <!--<img src="https://pbs.twimg.com/profile_images/875010472105222144/Pkt9zqPY_400x400.jpg" class="w-10 h-10 rounded mr-3"> -->
                 <div class="flex-1 overflow-hidden">
                     <div>
-                        <span class="text-white font-bold">Yamashita</span>
-                        <span class="text-grey text-xs">12/11 11:46</span>
+                        <span class="text-white font-bold">{{ message.author_name }}</span>
+                        <span class="text-grey text-xs">{{ unixtimeToString(message.created_at) }}</span>
                     </div>
-                    <p class="text-white leading-normal">I'm alone</p>
+                    <p class="text-white leading-normal">{{ message.message_text }}</p>
                     <div>
-                    <svg class="fill-current h-4 w-4 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <svg class="fill-current text-white h-4 w-4 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" />
                     </svg>
                     </div>
@@ -108,12 +115,15 @@
                 <!--<img src="https://pbs.twimg.com/profile_images/875010472105222144/Pkt9zqPY_400x400.jpg" class="w-10 h-10 rounded mr-3"> -->
                 <div class="flex-1 overflow-hidden">
                     <div>
-                        <span class="text-white font-bold">Monju (reply)</span>
+                        <span class="text-white font-bold">Monju (Simple sentense)</span>
                         <span class="text-grey text-xs">12/11 11:46</span>
                     </div>
                     <p class="text-white leading-normal">We are three </p>
+                    <div class="text-white">
+                         {{state.messages}}
+                    </div>
                     <div>
-                    <svg class="fill-current h-4 w-4 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <svg class="fill-current text-white h-4 w-4 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" />
                     </svg>
                     </div>
@@ -132,7 +142,38 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'nuxt-composition-api'
+import { defineComponent, reactive } from 'nuxt-composition-api'//nuxt-composition-apiにあるreactiveを持ってきた
+import firebase from '@/plugins/firebase.ts'
+import Vue from 'vue' //これやるとVueの中にある便利関数が使えるようになる！
 export default defineComponent({
+    setup() {
+        // ここにリアクティブなデータ、関数を定義
+        var db = firebase.firestore();
+        const state = reactive({
+            messages: {}
+        })
+
+        function unixtimeToString(unixtime:string) {
+            const date = new Date(Number(unixtime) * 1000);
+            console.log(date);
+            return date.getMonth()+1 +"/"+ date.getDate() +" "+ date.getHours() +":"+ date.getMinutes();
+        }; //unixtime...関数でunixtimeを時刻へ変換している
+        db.collection("messages")
+        .get()
+        .then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+                // doc.data() is never undefined for query doc snapshots
+                console.log(doc.id, " => ", doc.data());
+                Vue.set(state.messages, doc.id, doc.data()) //Vueの中にあるset関数。stateの中のmessages変数にdoc.idを基にdoc.data()を格納
+            });
+        })
+        .catch(function(error) {
+            console.log("Error getting documents: ", error);
+        });
+        return{
+            state,
+            unixtimeToString
+        }
+    }
 })
 </script>
