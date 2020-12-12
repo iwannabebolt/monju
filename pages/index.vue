@@ -155,21 +155,20 @@
             </div>
             <div class="flex items-start mb-4 text-sm">
                 <!--<img src="https://pbs.twimg.com/profile_images/875010472105222144/Pkt9zqPY_400x400.jpg" class="w-10 h-10 rounded mr-3"> -->
-                <div class="flex-1 overflow-hidden">
+                <!-- <div class="flex-1 overflow-hidden">
                     <div>
                         <span class="text-white font-bold">Monju (Simple sentense)</span>
                         <span class="text-grey text-xs">12/11 11:46</span>
                     </div>
                     <p class="text-white leading-normal">We are three </p>
                     <div class="text-white">
-                         {{state.messages}}
                     </div>
                     <div>
                     <svg class="fill-current text-white h-4 w-4 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" />
                     </svg>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="pb-6 px-4 flex-none">
@@ -220,12 +219,12 @@ export default defineComponent({
             // Add a new document with a generated id.
         function createMessage(classId:string,categoryId:string){
             db.collection("messages").add({
-                author_name: "Kiri",
+                author_name: "Kiki",
                 created_at: Math.floor((new Date()).getTime() / 1000),
                 message_text: state.messageText,
                 class_id: classId,
                 category_id: categoryId,
-                answer: []
+                answers: []
             }) 
             .then(function(docRef) {
                 console.log("Document written with ID: ", docRef.id);
