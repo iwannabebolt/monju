@@ -15,6 +15,7 @@
         required="true"
         placeholder="Password"
       />
+      <div class="text-white flex justify-center">Have an account? Please sign in here.</div>
       <button
         class="text-sm bg-blue-500 hover:bg-blue-700 text-white py-2 px-3 mt-2 rounded focus:outline-none focus:shadow-outline flex items-center"
         @click="submit"
@@ -40,7 +41,7 @@ export default defineComponent({
     })
     function submit() {
       firebase.auth().createUserWithEmailAndPassword(state.email, state.password)
-      .then(() => (location.href = '/profile/edit'))
+      .then(() => (location.href = '/edit'))
       .catch(function(error) {
         // Handle Errors here.
         alert('Fail sign up. ' + error.message)
