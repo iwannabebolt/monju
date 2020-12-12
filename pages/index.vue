@@ -1,6 +1,6 @@
 <template>
     <div class="font-sans antialiased w-screen h-screen flex">
-
+    <!--ここから下がヘッダー-->
     <div class="bg-gray-800 text-purple-lighter flex-none w-100 pb-6 hidden md:block">
         <div class="text-white mb-2 mt-3 px-4 flex justify-between">
             <div class="flex-auto">
@@ -19,30 +19,49 @@
         <div class="mb-8">
             <div class="px-4 mb-2 text-white flex justify-between items-center">
                 <div class="opacity-75"> 
-                    <svg class="inline-flex w-6 h-6 text-blue-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>Programming Boot Camp</div>
-                <svg class="inline-flex w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                </svg>
+                    <details>
+                        <summary>
+                            Programming Boot Camp
+                            <svg class="inline-flex w-6 h-6 text-white left" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                            </svg>
+                        </summary>
+                        <div class="bg-teal-dark py-1 px-10 text-white"># In the class</div>
+                        <div class="py-1 px-10 text-white"># Qestions to Professor</div>
+                        <div class="py-1 px-10 text-white"># Discussion with students</div>
+                    </details>
+                </div>            
             </div>
-            <div class="bg-teal-dark py-1 px-10 text-white"># In the class</div>
-            <div class="py-1 px-10 text-white"># Qestions to Professor</div>
-            <div class="py-1 px-10 text-white"># Discussion with students</div>
             <div class="px-4 mb-2 text-white flex justify-between items-center">
                 <div class="opacity-75"> 
-                    <svg class="inline-flex w-6 h-6 text-blue-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                    Professional and Value Creation 
-                </div>
-                <svg class="inline-flex w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                </svg>
+                    <details>
+                        <summary>
+                            Professional and Value Creation
+                            <svg class="inline-flex w-6 h-6 text-white right" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                            </svg>
+                        </summary>
+                        <div class="py-1 px-10 text-white"># In the class</div>
+                        <div class="py-1 px-10 text-white"># Qestions to Professor</div>
+                        <div class="py-1 px-10 text-white"># Discussion with students</div>
+                    </details>
+                </div>            
             </div>
-            <div class="py-1 px-10 text-white"># In the class</div>
-            <div class="py-1 px-10 text-white"># Qestions to Professor</div>
-            <div class="py-1 px-10 text-white"># Discussion with students</div>
+            <div class="px-4 mb-2 text-white flex justify-between items-center">
+                <div class="opacity-75"> 
+                    <details>
+                        <summary>
+                            A monkey can understand the central limit theorem
+                            <svg class="inline-flex w-6 h-6 text-white right" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                            </svg>
+                        </summary>
+                        <div class="py-1 px-10 text-white"># In the class</div>
+                        <div class="py-1 px-10 text-white"># Qestions to Professor</div>
+                        <div class="py-1 px-10 text-white"># Discussion with students</div>
+                    </details>
+                </div>            
+            </div>
         </div>
         
     </div>
