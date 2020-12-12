@@ -163,7 +163,7 @@ export default defineComponent({
             console.log(date);
             return date.getMonth()+1 +"/"+ date.getDate() +" "+ date.getHours() +":"+ date.getMinutes();
         }; //unixtime...関数でunixtimeを時刻へ変換している
-        db.collection("messages")
+        db.collection("messages").where("class_id","==","class_name").where("category_id","==","C2").orderBy("created_at")　//時間順で表示する
         .get()
         .then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
