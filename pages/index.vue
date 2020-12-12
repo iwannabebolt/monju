@@ -26,9 +26,9 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                             </svg>
                         </summary>
-                        <div class="bg-teal-dark py-1 px-10 text-white"># In the class</div>
-                        <div class="py-1 px-10 text-white"># Qestions to Professor</div>
-                        <div class="py-1 px-10 text-white"># Discussion with students</div>
+                        <div @click="changeId('PBC','C1')" class="bg-teal-dark py-1 px-10 text-white"># In the class</div>
+                        <div @click="changeId('PBC','C2')" class="py-1 px-10 text-white"># Qestions to Professor</div>
+                        <div @click="changeId('PBC','C3')" class="py-1 px-10 text-white"># Discussion with students</div>
                     </details>
                 </div>            
             </div>
@@ -41,9 +41,9 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                             </svg>
                         </summary>
-                        <div class="py-1 px-10 text-white"># In the class</div>
-                        <div class="py-1 px-10 text-white"># Qestions to Professor</div>
-                        <div class="py-1 px-10 text-white"># Discussion with students</div>
+                        <div @click="changeId('PVC','C1')" class="py-1 px-10 text-white"># In the class</div>
+                        <div @click="changeId('PVC','C2')" class="py-1 px-10 text-white"># Qestions to Professor</div>
+                        <div @click="changeId('PVC','C3')" class="py-1 px-10 text-white"># Discussion with students</div>
                     </details>
                 </div>            
             </div>
@@ -51,14 +51,14 @@
                 <div class="opacity-75"> 
                     <details>
                         <summary>
-                            A monkey can understand the central limit theorem
+                            Central Limit theorem that even Monkeys can understand
                             <svg class="inline-flex w-6 h-6 text-white right" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                             </svg>
                         </summary>
-                        <div class="py-1 px-10 text-white"># In the class</div>
-                        <div class="py-1 px-10 text-white"># Qestions to Professor</div>
-                        <div class="py-1 px-10 text-white"># Discussion with students</div>
+                        <div @click="changeId('CLM','C1')" class="py-1 px-10 text-white"># In the class</div>
+                        <div @click="changeId('CLM','C2')" class="py-1 px-10 text-white"># Qestions to Professor</div>
+                        <div @click="changeId('CLM','C3')" class="py-1 px-10 text-white"># Discussion with students</div>
                     </details>
                 </div>            
             </div>
@@ -136,7 +136,7 @@
                     <svg class="fill-current h-6 w-6 block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/></svg>
                   </span>
                 <input
-                    @keydown.enter="createMessage"
+                    @keydown.enter="createMessage(state.classId, state.categoryId)"
                     v-model="state.messageText"
                     type="text"
                     class="w-full px-4 bg-gray-900 text-white"
@@ -156,8 +156,11 @@ export default defineComponent({
         var db = firebase.firestore();
         const state = reactive({
             messages: {},
-            messageText: ""
+            messageText: "",
+            classId:"",
+            categoryId:""
         })
+        state.classId = "PBC";
         state.categoryId = "C1";
 
         function unixtimeToString(unixtime:string) {
@@ -165,16 +168,22 @@ export default defineComponent({
             console.log(date);
             return date.getMonth()+1 +"/"+ date.getDate() +" "+ date.getHours() +":"+ date.getMinutes();
         }; //unixtime...関数でunixtimeを時刻へ変換している
+        function changeId(classId:string,categoryId:string){
+            state.categoryId=categoryId;
+            state.classId=classId;
+            console.log(state);
+            getMessages(state.classId,state.categoryId);
+        }
             // Add a new document with a generated id.
-        function createMessage(){
+        function createMessage(classId:string,categoryId:string){
             db.collection("messages").add({
                 author_name: "Kiri",
                 created_at: Math.floor((new Date()).getTime() / 1000),
                 message_text: state.messageText,
-                class_id: "PBC",
-                category_id: "C1",
+                class_id: classId,
+                category_id: categoryId,
                 answer: []
-            })
+            }) //ここを後で動的に！！！
             .then(function(docRef) {
                 console.log("Document written with ID: ", docRef.id);
             })
@@ -182,11 +191,15 @@ export default defineComponent({
                 console.error("Error adding document: ", error);
             });
             state.messageText=""
+            getMessages(state.classId,state.categoryId);
         }
-            
-        db.collection("messages").where("class_id","==","PBC").where("category_id","==","C1").orderBy("created_at")　//class_idとcategory_idを識別し、時間順で表示する
+        
+        function getMessages(classId:string, categoryId:string){
+        db.collection("messages").where("class_id","==",classId).where("category_id","==",categoryId).orderBy("created_at")　//classとcategoryを変数にし、その部屋ごとのmessagesを取り込んでいる
+       //db.collection("messages").where("class_id","==","PBC").where("category_id","==","C1").orderBy("created_at")　//class_idとcategory_idを識別し、時間順で表示する.
         .get()
         .then(function(querySnapshot) {
+            state.messages = {}
             querySnapshot.forEach(function(doc) {
                 // doc.data() is never undefined for query doc snapshots
                 console.log(doc.id, " => ", doc.data());
@@ -196,10 +209,13 @@ export default defineComponent({
         .catch(function(error) {
             console.log("Error getting documents: ", error);
         });
+        }
+        getMessages("PBC","C1");
         return{
             state,
             unixtimeToString,
-            createMessage
+            createMessage,
+            changeId
         }
     }
 })
