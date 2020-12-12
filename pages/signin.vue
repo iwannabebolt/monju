@@ -20,6 +20,8 @@
         required="true"
         placeholder="Password"
       />
+      <div class="text-white flex justify-center">If you don't have an account, please sign up here.</div>
+
       <button
         class="text-sm bg-blue-500 hover:bg-blue-700 text-white py-2 px-3 mt-2 rounded focus:outline-none focus:shadow-outline flex items-center"
         @click="submit"
