@@ -72,7 +72,7 @@
                     <details>
                         <summary>
                             Central Limit theorem that even Monkeys can understand
-                            <svg class="inline-flex w-6 h-6 text-white right" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg class="inline-flex w-6 h-6 text-white right hover:bg-teal-dark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                             </svg>
                         </summary>
@@ -153,24 +153,6 @@
                         </div>
                 </div>
             </div>
-            <div class="flex items-start mb-4 text-sm">
-                <!--<img src="https://pbs.twimg.com/profile_images/875010472105222144/Pkt9zqPY_400x400.jpg" class="w-10 h-10 rounded mr-3"> -->
-                <div class="flex-1 overflow-hidden">
-                    <div>
-                        <span class="text-white font-bold">Monju (Simple sentense)</span>
-                        <span class="text-grey text-xs">12/11 11:46</span>
-                    </div>
-                    <p class="text-white leading-normal">We are three </p>
-                    <div class="text-white">
-                         {{state.messages}}
-                    </div>
-                    <div>
-                    <svg class="fill-current text-white h-4 w-4 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" />
-                    </svg>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="pb-6 px-4 flex-none">
             <div class="flex rounded-lg border-2 border-grey overflow-hidden">
@@ -237,6 +219,7 @@ export default defineComponent({
             getMessages(state.classId,state.categoryId); //clickした後にget message押すと反応する
         }
         
+<<<<<<< HEAD
         function createAnswer(messageId:string, answers:object[]){
             var messageRef = db.collection("messages").doc(messageId)
             answers.push({
@@ -255,6 +238,21 @@ export default defineComponent({
                 console.error("Error updating document: ", error);
             });
             state.answerText=""
+=======
+        function changeHeader(text:string){
+            if(text=="PBC") {
+                return "Program Boot Camp";
+            }else if(text=="PVC"){
+                return "Professional and Value Creation";
+            }else if(text=="CLM"){
+                return "Central Limit theorem that even Monkeys can understand";}
+            else if(text=="C1"){
+                return "# In the class";}
+            else if(text=="C2"){
+                return "# Qestions to Professor";}
+            else if(text=="C3"){
+                return "# Discussion with students";}
+>>>>>>> ccca66b8adba93866fb4b4b943b265a51306c21f
         }
 
         function getMessages(classId:string, categoryId:string){
@@ -293,7 +291,10 @@ export default defineComponent({
             unixtimeToString,
             createMessage,
             changeId,
+<<<<<<< HEAD
             createAnswer,
+=======
+>>>>>>> ccca66b8adba93866fb4b4b943b265a51306c21f
             changeHeader
         }
     }

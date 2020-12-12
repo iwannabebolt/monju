@@ -1,9 +1,7 @@
 <template>  
   <div class="bg-gray-800 w-screen h-screen">   
-    <div class='py-10 px-12 flex justify-center'>
-      <a href="https://imgbb.com/"><img src="https://i.ibb.co/Mh4kdTS/Monju-icon.png" alt="Monju_icon" border="0"></a>
-      <div class="font-semibold text-5xl text-white px-2 py-4" >Monju
-        </div>      
+      <div class='py-10 px-12 flex justify-center'>
+      <a href="https://ibb.co/Z1JhyQz"><img src="https://i.ibb.co/0VXfP0y/logo2.png" alt="logo2" border="0"></a>
     </div>
       <div class="font-semibold text-white text-3xl flex justify-center">Sign Up</div>
 
@@ -15,7 +13,7 @@
         required="true"
         placeholder="Password"
       />
-      <div class="text-white flex justify-center">Have an account? Please sign in here.</div>
+      <div class="text-white flex justify-center">Have an account? Please sign in &nbsp <a href="/signin"><b>here</b></a>.</div>
       <button
         class="text-sm bg-blue-500 hover:bg-blue-700 text-white py-2 px-3 mt-2 rounded focus:outline-none focus:shadow-outline flex items-center"
         @click="submit"
