@@ -135,8 +135,13 @@
                 <span class="text-3xl text-grey border-r-2 border-grey p-2">
                     <svg class="fill-current h-6 w-6 block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/></svg>
                   </span>
-                <input type="text" class="w-full px-4 bg-gray-900 text-white" placeholder="Message #In the class" />
-            </div>
+                <input
+                    @keydown.enter="createMessage"
+                    v-model="state.messageText"
+                    type="text"
+                    class="w-full px-4 bg-gray-900 text-white"
+                    placeholder="Message #In the class" />
+            </div> <!--v-modelていうのを使うと、入力したテキストがstate.messageTextに入る-->
         </div>
     </div>
   </div>
@@ -150,15 +155,36 @@ export default defineComponent({
         // ここにリアクティブなデータ、関数を定義
         var db = firebase.firestore();
         const state = reactive({
-            messages: {}
+            messages: {},
+            messageText: ""
         })
+        state.categoryId = "C1";
 
         function unixtimeToString(unixtime:string) {
             const date = new Date(Number(unixtime) * 1000);
             console.log(date);
             return date.getMonth()+1 +"/"+ date.getDate() +" "+ date.getHours() +":"+ date.getMinutes();
         }; //unixtime...関数でunixtimeを時刻へ変換している
-        db.collection("messages").where("class_id","==","class_name").where("category_id","==","C2").orderBy("created_at")　//時間順で表示する
+            // Add a new document with a generated id.
+        function createMessage(){
+            db.collection("messages").add({
+                author_name: "Kiri",
+                created_at: Math.floor((new Date()).getTime() / 1000),
+                message_text: state.messageText,
+                class_id: "PBC",
+                category_id: "C1",
+                answer: []
+            })
+            .then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+            })
+            .catch(function(error) {
+                console.error("Error adding document: ", error);
+            });
+            state.messageText=""
+        }
+            
+        db.collection("messages").where("class_id","==","PBC").where("category_id","==","C1").orderBy("created_at")　//class_idとcategory_idを識別し、時間順で表示する
         .get()
         .then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
@@ -172,7 +198,8 @@ export default defineComponent({
         });
         return{
             state,
-            unixtimeToString
+            unixtimeToString,
+            createMessage
         }
     }
 })
