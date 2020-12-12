@@ -2,9 +2,29 @@
     <div class="font-sans antialiased w-screen h-screen flex">
     <!--ここから下がヘッダー-->
     <div class="bg-gray-800 text-purple-lighter flex-none w-100 pb-6 hidden md:block">
-        <div class="text-white mb-2 mt-3 px-4 flex justify-between">
+        <div class="text-white mb-2 mt-3 px-4 flex justify-between bg-gray-700">
             <div class="flex-auto">
-                <h1 class="font-semibold text-xl leading-tight mb-1 truncate">Monju CSS</h1>
+                <div class="flex">
+                    <a class='flex' href='/signin'>
+                    <img src="https://i.ibb.co/0VXfP0y/logo2.png" alt="logo" border="0" width="300">
+                    </a>
+                    <!--a class='h-10 w-12' shref="https://imgbb.com/"><img src="https://i.ibb.co/z7NsqKJ/Monju-icon-white.png" alt="Monju_icon_white" border="0"></a-->
+                    <!--h1 class="font-semibold text-4xl leading-none mb-3s">Monju</h1-->
+                </div>
+                <div class="flex items-center mb-6">
+                    <span class="bg-green rounded-full block w-2 h-2 mr-2"></span>
+                    <span class="text-white opacity-50 text-sm">Yamashita</span>
+                </div>
+            </div>
+            <div>
+                <svg class="h-10 w-6 fill-current text-white opacity-25" viewBox="0 0 20 20">
+                    <path d="M14 8a4 4 0 1 0-8 0v7h8V8zM8.027 2.332A6.003 6.003 0 0 0 4 8v6l-3 2v1h18v-1l-3-2V8a6.003 6.003 0 0 0-4.027-5.668 2 2 0 1 0-3.945 0zM12 18a2 2 0 1 1-4 0h4z" fill-rule="evenodd" />
+                </svg>
+            </div>
+        </div>
+        <!-- <div class="text-white mb-2 mt-3 px-4 flex justify-between">
+            <div class="flex-auto">
+                <h1 class="font-semibold text-xl leading-tight mb-1 truncate">Monju</h1>
                 <div class="flex items-center mb-6">
                     <span class="bg-green rounded-full block w-2 h-2 mr-2"></span>
                     <span class="text-white opacity-50 text-sm">Yamashita</span>
@@ -15,7 +35,7 @@
                     <path d="M14 8a4 4 0 1 0-8 0v7h8V8zM8.027 2.332A6.003 6.003 0 0 0 4 8v6l-3 2v1h18v-1l-3-2V8a6.003 6.003 0 0 0-4.027-5.668 2 2 0 1 0-3.945 0zM12 18a2 2 0 1 1-4 0h4z" fill-rule="evenodd" />
                 </svg>
             </div>
-        </div>
+        </div> -->
         <div class="mb-8">
             <div class="px-4 mb-2 text-white flex justify-between items-center">
                 <div class="opacity-75"> 
@@ -26,9 +46,9 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                             </svg>
                         </summary>
-                        <div @click="changeId('PBC','C1')" class="bg-teal-dark py-1 px-10 text-white"># In the class</div>
-                        <div @click="changeId('PBC','C2')" class="py-1 px-10 text-white"># Qestions to Professor</div>
-                        <div @click="changeId('PBC','C3')" class="py-1 px-10 text-white"># Discussion with students</div>
+                        <div @click="changeId('PBC','C1')" class="hover:bg-teal-dark py-1 px-10 text-white"># In the class</div>
+                        <div @click="changeId('PBC','C2')" class="hover:bg-teal-dark py-1 px-10 text-white"># Qestions to Professor</div>
+                        <div @click="changeId('PBC','C3')" class="hover:bg-teal-dark py-1 px-10 text-white"># Discussion with students</div>
                     </details>
                 </div>            
             </div>
@@ -41,9 +61,9 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                             </svg>
                         </summary>
-                        <div @click="changeId('PVC','C1')" class="py-1 px-10 text-white"># In the class</div>
-                        <div @click="changeId('PVC','C2')" class="py-1 px-10 text-white"># Qestions to Professor</div>
-                        <div @click="changeId('PVC','C3')" class="py-1 px-10 text-white"># Discussion with students</div>
+                        <div @click="changeId('PVC','C1')" class="hover:bg-teal-dark py-1 px-10 text-white"># In the class</div>
+                        <div @click="changeId('PVC','C2')" class="hover:bg-teal-dark py-1 px-10 text-white"># Qestions to Professor</div>
+                        <div @click="changeId('PVC','C3')" class="hover:bg-teal-dark py-1 px-10 text-white"># Discussion with students</div>
                     </details>
                 </div>            
             </div>
@@ -56,9 +76,9 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                             </svg>
                         </summary>
-                        <div @click="changeId('CLM','C1')" class="py-1 px-10 text-white"># In the class</div>
-                        <div @click="changeId('CLM','C2')" class="py-1 px-10 text-white"># Qestions to Professor</div>
-                        <div @click="changeId('CLM','C3')" class="py-1 px-10 text-white"># Discussion with students</div>
+                        <div @click="changeId('CLM','C1')" class="hover:bg-teal-dark py-1 px-10 text-white"># In the class</div>
+                        <div @click="changeId('CLM','C2')" class="hover:bg-teal-dark py-1 px-10 text-white"># Qestions to Professor</div>
+                        <div @click="changeId('CLM','C3')" class="hover:bg-teal-dark py-1 px-10 text-white"># Discussion with students</div>
                     </details>
                 </div>            
             </div>
@@ -70,7 +90,7 @@
         <!-- Top bar -->
         <div class="border-b flex px-6 py-2 items-center flex-none">
             <div class="flex flex-col">
-                <h3 class="text-white mb-1 font-extrabold">#In the class</h3>
+                <h3 class="text-white mb-1 font-extrabold">{{changeHeader(state.categoryId)}}</h3>
                 <div class="text-grey text-sm truncate">
                     Ask anything you want
                 </div>
@@ -104,11 +124,33 @@
                         <span class="text-grey text-xs">{{ unixtimeToString(message.created_at) }}</span>
                     </div>
                     <p class="text-white leading-normal">{{ message.message_text }}</p>
-                    <div>
-                    <svg class="fill-current text-white h-4 w-4 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" />
-                    </svg>
+                    <div class="pb-6 px-4 flex-none">
+                        <div class="flex rounded-lg border-2 border-grey overflow-hidden">
+                            <span class="text-3xl text-grey border-r-2 border-grey p-2">
+                                <svg class="fill-current h-3 w-3 block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/></svg>
+                            </span>
+                            <input
+                                @keydown.enter="createAnswer(messageId, message.answers)"
+                                v-model="state.answerText"
+                                type="text"
+                                class="w-full px-4 bg-gray-900 text-white"
+                                placeholder="Reply Here" />
+                        </div> <!--v-modelていうのを使うと、入力したテキストがstate.answerTextに入る-->
                     </div>
+                    <!-- +を押したら返信が出るやつ -->
+                    <!-- <div @click="createAnswer(messageId, message.answers)">
+                        <svg class="fill-current text-white h-4 w-4 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" />
+                        </svg>
+                    </div> -->
+                        <div v-for="(answer, index) in message.answers"
+                        :key="index">
+                            <div>
+                            <span class="text-white font-bold px-10">{{answer.author_name}}</span>
+                            <span class="text-grey text-xs">{{ unixtimeToString(answer.created_at) }}</span>
+                            </div>
+                            <p class="text-white leading-normal px-10">{{ answer.message_text }}</p>
+                        </div>
                 </div>
             </div>
             <div class="flex items-start mb-4 text-sm">
@@ -140,7 +182,7 @@
                     v-model="state.messageText"
                     type="text"
                     class="w-full px-4 bg-gray-900 text-white"
-                    placeholder="Message #In the class" />
+                    placeholder="Message Here"/>
             </div> <!--v-modelていうのを使うと、入力したテキストがstate.messageTextに入る-->
         </div>
     </div>
@@ -158,7 +200,8 @@ export default defineComponent({
             messages: {},
             messageText: "",
             classId:"",
-            categoryId:""
+            categoryId:"",
+            answerText:""
         })
         state.classId = "PBC";
         state.categoryId = "C1";
@@ -183,7 +226,7 @@ export default defineComponent({
                 class_id: classId,
                 category_id: categoryId,
                 answer: []
-            }) //ここを後で動的に！！！
+            }) 
             .then(function(docRef) {
                 console.log("Document written with ID: ", docRef.id);
             })
@@ -191,9 +234,29 @@ export default defineComponent({
                 console.error("Error adding document: ", error);
             });
             state.messageText=""
-            getMessages(state.classId,state.categoryId);
+            getMessages(state.classId,state.categoryId); //clickした後にget message押すと反応する
         }
         
+        function createAnswer(messageId:string, answers:object[]){
+            var messageRef = db.collection("messages").doc(messageId)
+            answers.push({
+                author_name: "Simo",
+                created_at: Math.floor((new Date()).getTime() / 1000),
+                message_text: state.answerText,
+            })
+            messageRef.update({
+                answers: answers //returnすると以下の流れが行われない
+            })
+            .then(function() {
+                console.log("Document successfully updated!");
+            })
+            .catch(function(error) {
+                // The document probably doesn't exist.
+                console.error("Error updating document: ", error);
+            });
+            state.answerText=""
+        }
+
         function getMessages(classId:string, categoryId:string){
         db.collection("messages").where("class_id","==",classId).where("category_id","==",categoryId).orderBy("created_at")　//classとcategoryを変数にし、その部屋ごとのmessagesを取り込んでいる
        //db.collection("messages").where("class_id","==","PBC").where("category_id","==","C1").orderBy("created_at")　//class_idとcategory_idを識別し、時間順で表示する.
@@ -210,12 +273,28 @@ export default defineComponent({
             console.log("Error getting documents: ", error);
         });
         }
+        function changeHeader(text:string){
+            if(text=="PBC") {
+                return "Program Boot Camp";
+            }else if(text=="PVC"){
+                return "Professional and Value Creation";
+            }else if(text=="CLM"){
+                return "Central Limit theorem that even Monkeys can understand";}
+            else if(text=="C1"){
+                return "# In the class";}
+            else if(text=="C2"){
+                return "# Qestions to Professor";}
+            else if(text=="C3"){
+                return "# Discussion with students";}
+        }
         getMessages("PBC","C1");
         return{
             state,
             unixtimeToString,
             createMessage,
-            changeId
+            changeId,
+            createAnswer,
+            changeHeader
         }
     }
 })
