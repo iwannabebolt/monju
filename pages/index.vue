@@ -13,7 +13,7 @@
                 </div>
                 <div class="flex items-center mb-2">
                     <span class="bg-green rounded-full block w-2 h-2 mr-2"></span>
-                    <span class="text-white opacity-50 text-sm">Yamashita</span>
+                    <span class="text-white opacity-50 text-sm">Keisuke Yamada</span>
                     <a class='flex hover:bg-teal-dark py-1 px-5' href='/edit'>
                     <span class="text-white opacity-50 text-sm"> > Edit Prifile</span>
                     </a>
@@ -98,7 +98,7 @@
             </div> -->
         </div>
         <!-- Chat messages -->
-        <div class="px-6 py-4 flex-1 overflow-y-scroll">
+        <div class="px-6 py-4 flex-1 overflow-y-scroll" id="scroll_box">
             <!-- A message v-for 使ってmessagesのデータをmessageという新規変数に組み込まないと取り出せない.
             v-forを使って、messageにstateの中のmessages内にある各データを順番に入れる。
             messageIdには、長いIDが入る。
@@ -114,7 +114,7 @@
                         <span class="text-white font-bold">{{ message.author_name }}</span>
                         <span class="text-grey text-xs">{{ unixtimeToString(message.created_at) }}</span>
                     </div>
-                    <p class="text-white leading-normal">{{ message.message_text }}</p>
+                    <p class="text-red-300 leading-normal">{{ message.message_text }}</p>
                    
                     <!-- +を押したら返信が出るやつ -->
                     <!-- <div @click="createAnswer(messageId, message.answers)">
@@ -123,14 +123,14 @@
                         </svg>
                     </div> -->
                         <details>
-                            <summary class="text-blue-300">Reply</summary>
+                            <summary class="text-blue-300">{{message.answers.length}} replies</summary>
                         <div v-for="(answer, index) in message.answers"
                         :key="index">
                             <div>
                             <span class="text-white font-bold px-10">{{answer.author_name}}</span>
                             <span class="text-grey text-xs">{{ unixtimeToString(answer.created_at) }}</span>
                             </div>
-                            <p class="text-white leading-normal px-10">{{ answer.message_text }}</p>
+                            <p class="text-red-300 leading-normal px-10">{{ answer.message_text }}</p>
                         </div>
                         <div class="pb-6 px-4 flex-none">
                             <div class="flex rounded-lg border-2 border-grey overflow-hidden">
@@ -218,7 +218,7 @@ export default defineComponent({
             // Add a new document with a generated id.
         function createMessage(classId:string,categoryId:string){
             db.collection("messages").add({
-                author_name: "Kiki",
+                author_name: "Keisuke Yamada",
                 created_at: Math.floor((new Date()).getTime() / 1000),
                 message_text: state.messageText,
                 class_id: classId,
@@ -238,7 +238,7 @@ export default defineComponent({
         function createAnswer(event:any, messageId:string, answers:object[]){
             var messageRef = db.collection("messages").doc(messageId) //eventで作った文章はKeyboard eventのtarget.velueに格納されるのでそれを取ってくる
             answers.push({
-                author_name: "Monju",
+                author_name: "Keisuke Yamada",
                 created_at: Math.floor((new Date()).getTime() / 1000),
                 message_text: event.target.value, //eventは元から定義されているものだからstateを使わなくてよい。Eventの発生前後のみ存在するもの
             })
@@ -309,5 +309,20 @@ export default defineComponent({
     summary:hover {
     cursor: pointer; /* カーソルを指マークに */
     background-color: #efefef36;
+    }
+    #scroll_box{
+        white-space: nowrap;
+    }
+    #scroll_box::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+    #scroll_box::-webkit-scrollbar-track {
+        border-radius: 5px;
+        box-shadow: 0 0 4px #aaa inset;
+    }
+    #scroll_box::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background: #57626E;
     }
 </style>
