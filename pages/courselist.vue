@@ -7,14 +7,14 @@
       Add Course
     </div>
 
-    <div class="w-1/4 m-auto justify-center">
+    <div class="w-1/3 m-auto justify-center">
       <label class="text-lg title-font text-white tracking-widest">
             Course Code :
       </label>
-      <input  v-model="code" placeholder="coursecode" style ="width: 200px; height:50px;">
+      <input  v-model="coursecode" placeholder="coursecode" style ="width: 250px; height:50px;">
       <button
             class="w-20 text-center text-sm bg-blue-500 hover:bg-blue-700 text-white py-2 px-3 mt-2 rounded focus:outline-none focus:shadow-outline"
-            @click="searchcourse">
+            @click="searchcourse(coursecode)">
             Search
       </button>
     </div>
@@ -24,9 +24,9 @@
     </div>
     <div class="w-1/4 m-auto">
       <label class="text-lg title-font text-white tracking-widest">
-            Here should be the course name
+            
+            {{state.result}}
       </label>
-    
     </div>
     <div class='text-center'>   
       <button
@@ -43,16 +43,9 @@ import firebase from '@/plugins/firebase.ts'
 
 export default defineComponent({
   setup(_, { root }: SetupContext) {
-    
-    var array={'TAL:W401':'Introduction to Leadership','TAL.W602':'Practical Group Work for Leadership 1'}
-    Object.keys(array).forEach(function(value) {
- 
-    console.log( value + '：' + this[value] );
- 
-}, array)
-
-
-
+    const state=reactive({
+      result:""
+    })
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
         // User is signed in.
@@ -62,9 +55,23 @@ export default defineComponent({
         // No user is signed in.
       }
     })
-  function searchcourse(code:string,dict:{}){
-      
+  function searchcourse(coursecode:string){
+    console.log(coursecode)
+    var array={'TAL:W401':'Introduction to Leadership','TAL.W602':'Practical Group Work for Leadership 1'}
+      for(var key of Object.keys(array)){
+
+          // 連想配列のキーと配列の値が一致するか検索
+              if(key == coursecode){
+                  state.result= array[key]; // 連想配列に格納
+                  console.log(state.result)
+                      break;   
+                  }
+      }
   }
+  return {
+    searchcourse,
+    state
+    }
   }
-})  
+})
 </script>
