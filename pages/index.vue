@@ -8,12 +8,12 @@
                     <a class='flex' href='/signin'>
                     <img src="https://i.ibb.co/0VXfP0y/logo2.png" alt="logo" border="0" width="300">
                     </a>
-                    <!--a class='h-10 w-12' shref="https://imgbb.com/"><img src="https://i.ibb.co/z7NsqKJ/Monju-icon-white.png" alt="Monju_icon_white" border="0"></a-->
+                    <!--文字で表示するやーつa class='h-10 w-12' shref="https://imgbb.com/"><img src="https://i.ibb.co/z7NsqKJ/Monju-icon-white.png" alt="Monju_icon_white" border="0"></a-->
                     <!--h1 class="font-semibold text-4xl leading-none mb-3s">Monju</h1-->
                 </div>
                 <div class="flex items-center mb-6">
                     <span class="bg-green rounded-full block w-2 h-2 mr-2"></span>
-                    <span class="text-white opacity-50 text-sm">Yamashita</span>
+                    <span class="text-white opacity-50 text-sm">Kiki</span>
                 </div>
             </div>
             <div>
@@ -22,20 +22,6 @@
                 </svg>
             </div>
         </div>
-        <!-- <div class="text-white mb-2 mt-3 px-4 flex justify-between">
-            <div class="flex-auto">
-                <h1 class="font-semibold text-xl leading-tight mb-1 truncate">Monju</h1>
-                <div class="flex items-center mb-6">
-                    <span class="bg-green rounded-full block w-2 h-2 mr-2"></span>
-                    <span class="text-white opacity-50 text-sm">Yamashita</span>
-                </div>
-            </div>
-            <div>
-                <svg class="h-6 w-6 fill-current text-white opacity-25" viewBox="0 0 20 20">
-                    <path d="M14 8a4 4 0 1 0-8 0v7h8V8zM8.027 2.332A6.003 6.003 0 0 0 4 8v6l-3 2v1h18v-1l-3-2V8a6.003 6.003 0 0 0-4.027-5.668 2 2 0 1 0-3.945 0zM12 18a2 2 0 1 1-4 0h4z" fill-rule="evenodd" />
-                </svg>
-            </div>
-        </div> -->
         <div class="mb-8">
             <div class="px-4 mb-2 text-white flex justify-between items-center">
                 <div class="opacity-75"> 
@@ -109,7 +95,7 @@
         <!-- Chat messages -->
         <div class="px-6 py-4 flex-1 overflow-y-scroll">
             <!-- A message v-for 使ってmessagesのデータをmessageという新規変数に組み込まないと取り出せない.
-            v-forを使って、messageにstateの中のmessagesデータを入れる。
+            v-forを使って、messageにstateの中のmessages内にある各データを順番に入れる。
             messageIdには、長いIDが入る。
             またv-forを使っているので、messages(元データ)に新規メッセージが追加されれば、それも自動的に繰り返され、表示される。
             -->
@@ -117,32 +103,22 @@
               v-for="(message, messageId) in state.messages"
               :key="messageId"
               class="flex items-start mb-4 text-sm">
-                <!--<img src="https://pbs.twimg.com/profile_images/875010472105222144/Pkt9zqPY_400x400.jpg" class="w-10 h-10 rounded mr-3"> -->
+                <!-- アイコンのやーつ　<img src="https://pbs.twimg.com/profile_images/875010472105222144/Pkt9zqPY_400x400.jpg" class="w-10 h-10 rounded mr-3"> -->
                 <div class="flex-1 overflow-hidden">
                     <div>
                         <span class="text-white font-bold">{{ message.author_name }}</span>
                         <span class="text-grey text-xs">{{ unixtimeToString(message.created_at) }}</span>
                     </div>
                     <p class="text-white leading-normal">{{ message.message_text }}</p>
-                    <div class="pb-6 px-4 flex-none">
-                        <div class="flex rounded-lg border-2 border-grey overflow-hidden">
-                            <span class="text-3xl text-grey border-r-2 border-grey p-2">
-                                <svg class="fill-current h-3 w-3 block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/></svg>
-                            </span>
-                            <input
-                                @keydown.enter="createAnswer(messageId, message.answers)"
-                                v-model="state.answerText"
-                                type="text"
-                                class="w-full px-4 bg-gray-900 text-white"
-                                placeholder="Reply Here" />
-                        </div> <!--v-modelていうのを使うと、入力したテキストがstate.answerTextに入る-->
-                    </div>
+                   
                     <!-- +を押したら返信が出るやつ -->
                     <!-- <div @click="createAnswer(messageId, message.answers)">
                         <svg class="fill-current text-white h-4 w-4 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" />
                         </svg>
                     </div> -->
+                        <details>
+                            <summary class="text-blue-300">Reply</summary>
                         <div v-for="(answer, index) in message.answers"
                         :key="index">
                             <div>
@@ -151,9 +127,28 @@
                             </div>
                             <p class="text-white leading-normal px-10">{{ answer.message_text }}</p>
                         </div>
+                        <div class="pb-6 px-4 flex-none">
+                            <div class="flex rounded-lg border-2 border-grey overflow-hidden">
+                                <span class="text-3xl text-grey border-r-2 border-grey p-2">
+                                    <svg class="fill-current h-3 w-3 block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/></svg>
+                                </span>
+                                <input
+                                    @keydown.enter="createAnswer($event, messageId, message.answers)"
+                                    type="text"
+                                    class="w-full px-4 bg-gray-900 text-white"
+                                    placeholder="Reply Here" />
+                            </div> 
+                            <!--ここで、Enterを押すと、createAnswerが動き、event.target.valueに文字が入る。
+                            EventつまりEnter動作が行われて初めて文章を読むようにした。
+                            v-modelを使っていた時は、全ての入力エリアに同じ変数が入っていた。
+                            ここで入力していた文字は即座にv-modelに格納され、表示され、v-forで共有されていた。
+                            それをeventを用いると、Enterを押すまでevent.target.valueに文字が入らないので
+                            別のエリアに文字が出ることは無くなる-->
+                        </div>
+                        </details>
                 </div>
             </div>
-            <div class="flex items-start mb-4 text-sm">
+            <!-- <div class="flex items-start mb-4 text-sm"> -->
                 <!--<img src="https://pbs.twimg.com/profile_images/875010472105222144/Pkt9zqPY_400x400.jpg" class="w-10 h-10 rounded mr-3"> -->
                 <!-- <div class="flex-1 overflow-hidden">
                     <div>
@@ -169,7 +164,7 @@
                     </svg>
                     </div>
                 </div> -->
-            </div>
+            <!-- </div> -->
         </div>
         <div class="pb-6 px-4 flex-none">
             <div class="flex rounded-lg border-2 border-grey overflow-hidden">
@@ -200,7 +195,6 @@ export default defineComponent({
             messageText: "",
             classId:"",
             categoryId:"",
-            answerText:""
         })
         state.classId = "PBC";
         state.categoryId = "C1";
@@ -236,12 +230,12 @@ export default defineComponent({
             getMessages(state.classId,state.categoryId); //clickした後にget message押すと反応する
         }
         
-        function createAnswer(messageId:string, answers:object[]){
-            var messageRef = db.collection("messages").doc(messageId)
+        function createAnswer(event:any, messageId:string, answers:object[]){
+            var messageRef = db.collection("messages").doc(messageId) //eventで作った文章はKeyboard eventのtarget.velueに格納されるのでそれを取ってくる
             answers.push({
-                author_name: "Simo",
+                author_name: "Monju",
                 created_at: Math.floor((new Date()).getTime() / 1000),
-                message_text: state.answerText,
+                message_text: event.target.value, //eventは元から定義されているものだからstateを使わなくてよい。Eventの発生前後のみ存在するもの
             })
             messageRef.update({
                 answers: answers //returnすると以下の流れが行われない
@@ -253,7 +247,7 @@ export default defineComponent({
                 // The document probably doesn't exist.
                 console.error("Error updating document: ", error);
             });
-            state.answerText=""
+            event.target.value=""
         }
 
         function getMessages(classId:string, categoryId:string){
@@ -286,6 +280,7 @@ export default defineComponent({
             else if(text=="C3"){
                 return "# Discussion with students";}
         }
+
         getMessages("PBC","C1");
         return{
             state,
@@ -293,7 +288,7 @@ export default defineComponent({
             createMessage,
             changeId,
             createAnswer,
-            changeHeader
+            changeHeader,
         }
     }
 })
