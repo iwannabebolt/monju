@@ -81,9 +81,9 @@
         <!-- Top bar -->
         <div class="border-b flex px-6 py-2 items-center flex-none">
             <div class="flex flex-col">
-                <h3 class="text-white mb-1 font-extrabold">{{changeHeader(state.categoryId)}}</h3>
+                <h3 class="text-white mb-1 font-extrabold">{{changeHeaderClass(state.classId)}}</h3>
                 <div class="text-grey text-sm truncate">
-                    Ask anything you want
+                    {{changeHeaderCategory(state.categoryId)}}
                 </div>
             </div>
             <!--これがSearchのとこ <div class="ml-auto hidden md:block">
@@ -271,21 +271,22 @@ export default defineComponent({
             console.log("Error getting documents: ", error);
         });
         }
-        function changeHeader(text:string){
-            if(text=="PBC") {
-                return "Program Boot Camp";
-            }else if(text=="PVC"){
-                return "Professional and Value Creation";
-            }else if(text=="CLM"){
-                return "Central Limit theorem that even Monkeys can understand";}
-            else if(text=="C1"){
+        function changeHeaderCategory(text:string){
+            if(text=="C1"){
                 return "# In the class";}
             else if(text=="C2"){
                 return "# Qestions to Professor";}
             else if(text=="C3"){
                 return "# Discussion with students";}
         }
-
+        function changeHeaderClass(text:string){
+            if(text=="PBC") {
+                return "Programming Boot Camp";
+            }else if(text=="PVC"){
+                return "Professional and Value Creation";
+            }else if(text=="CLM"){
+                return "Central Limit theorem that even Monkeys can understand";}
+        }
         getMessages("PBC","C1");
         return{
             state,
@@ -293,7 +294,8 @@ export default defineComponent({
             createMessage,
             changeId,
             createAnswer,
-            changeHeader,
+            changeHeaderCategory,
+            changeHeaderClass
         }
     }
 })
