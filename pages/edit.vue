@@ -3,7 +3,7 @@
   <div class="bg-gray-800 w-screen h-screen overflow-y-scroll">
   
     <div class='py-5 px-16 flex justify-center'>
-      <a href="https://ibb.co/Z1JhyQz"><img src="https://i.ibb.co/0VXfP0y/logo2.png" alt="logo2" border="0"></a>
+      <img src="https://i.ibb.co/0VXfP0y/logo2.png" alt="logo2" border="0">
            
     </div>
       <div class="font-semibold text-white text-3xl flex justify-center">Edit Profile</div>
