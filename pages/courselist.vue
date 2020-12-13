@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gray-800 w-screen h-screen">
     <div class='py-5 px-16 flex justify-center'>
-      <a href="https://ibb.co/Z1JhyQz"><img src="https://i.ibb.co/0VXfP0y/logo2.png" alt="logo2" border="0"></a>
+      <img src="https://i.ibb.co/0VXfP0y/logo2.png" alt="logo2" border="0">
     </div>
     <div class="font-semibold text-white text-3xl flex justify-center py-4">
       Add Course
@@ -11,7 +11,7 @@
       <label class="text-lg title-font text-white tracking-widest">
             Course Code :
       </label>
-      <input  v-model="coursecode" placeholder="coursecode" style ="width: 250px; height:50px;">
+      <input  v-model="coursecode" placeholder="Coursecode:TAL.W602" style ="width: 250px; height:50px;">
       <button
             class="w-20 text-center text-sm bg-blue-500 hover:bg-blue-700 text-white py-2 px-3 mt-2 rounded focus:outline-none focus:shadow-outline"
             @click="searchcourse(coursecode)">
@@ -59,13 +59,12 @@ export default defineComponent({
     console.log(coursecode)
     var array={'TAL:W401':'Introduction to Leadership','TAL.W602':'Practical Group Work for Leadership 1'}
       for(var key of Object.keys(array)){
-
-          // 連想配列のキーと配列の値が一致するか検索
-              if(key == coursecode){
-                  state.result= array[key]; // 連想配列に格納
-                  console.log(state.result)
-                      break;   
-                  }
+      // 連想配列のキーと配列の値が一致するか検索
+        if(key == coursecode){
+            state.result= array[key]; // 連想配列に格納
+            console.log(state.result)
+                break;   
+            }
       }
   }
   return {
