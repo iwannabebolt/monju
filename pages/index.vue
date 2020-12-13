@@ -231,7 +231,7 @@ export default defineComponent({
             .catch(function(error) {
                 console.error("Error adding document: ", error);
             });
-            state.messageText=""
+            state.messageText=""//messageTextをEnterで出力した後、messageTextを空にしないと文章が入力エリアに残る
             getMessages(state.classId,state.categoryId); //clickした後にget message押すと反応する
         }
         
