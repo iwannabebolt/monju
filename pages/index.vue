@@ -8,12 +8,18 @@
                     <a class='flex' href='/signin'>
                     <img src="https://i.ibb.co/0VXfP0y/logo2.png" alt="logo" border="0" width="300">
                     </a>
-                    <!--文字で表示するやーつa class='h-10 w-12' shref="https://imgbb.com/"><img src="https://i.ibb.co/z7NsqKJ/Monju-icon-white.png" alt="Monju_icon_white" border="0"></a-->
+                    <!--a class='h-10 w-12' shref="https://imgbb.com/"><img src="https://i.ibb.co/z7NsqKJ/Monju-icon-white.png" alt="Monju_icon_white" border="0"></a-->
                     <!--h1 class="font-semibold text-4xl leading-none mb-3s">Monju</h1-->
                 </div>
-                <div class="flex items-center mb-6">
+                <div class="flex items-center mb-2">
                     <span class="bg-green rounded-full block w-2 h-2 mr-2"></span>
-                    <span class="text-white opacity-50 text-sm">Kiki</span>
+                    <span class="text-white opacity-50 text-sm">Yamashita</span>
+                    <a class='flex hover:bg-teal-dark py-1 px-5' href='/edit'>
+                    <span class="text-white opacity-50 text-sm"> > Edit Prifile</span>
+                    </a>
+                    <a class='flex hover:bg-teal-dark py-1 px-5' href='/courselist'>
+                    <span class="text-white opacity-50 text-sm"> > Select Course</span>
+                    </a>
                 </div>
             </div>
             <div>
@@ -27,14 +33,14 @@
                 <div class="opacity-75"> 
                     <details>
                         <summary>
-                            Programming Boot Camp
-                            <svg class="inline-flex w-6 h-6 text-white left" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                            </svg>
+                                <svg class="inline-flex w-6 h-6 text-yellow left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                Programming Boot Camp
                         </summary>
-                        <div @click="changeId('PBC','C1')" class="hover:bg-teal-dark py-1 px-10 text-white"># In the class</div>
-                        <div @click="changeId('PBC','C2')" class="hover:bg-teal-dark py-1 px-10 text-white"># Qestions to Professor</div>
-                        <div @click="changeId('PBC','C3')" class="hover:bg-teal-dark py-1 px-10 text-white"># Discussion with students</div>
+                        <div @click="changeId('PBC','C1')" class="hover:bg-teal-dark py-1 px-10 text-white cursor-pointer"># In the class</div>
+                        <div @click="changeId('PBC','C2')" class="hover:bg-teal-dark py-1 px-10 text-white cursor-pointer"># Qestions to Professor</div>
+                        <div @click="changeId('PBC','C3')" class="hover:bg-teal-dark py-1 px-10 text-white cursor-pointer"># Discussion with students</div>
                     </details>
                 </div>            
             </div>
@@ -42,14 +48,14 @@
                 <div class="opacity-75"> 
                     <details>
                         <summary>
+                            <svg class="inline-flex w-6 h-6 text-white right" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                            </svg>
                             Professional and Value Creation
-                            <svg class="inline-flex w-6 h-6 text-white right" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                            </svg>
                         </summary>
-                        <div @click="changeId('PVC','C1')" class="hover:bg-teal-dark py-1 px-10 text-white"># In the class</div>
-                        <div @click="changeId('PVC','C2')" class="hover:bg-teal-dark py-1 px-10 text-white"># Qestions to Professor</div>
-                        <div @click="changeId('PVC','C3')" class="hover:bg-teal-dark py-1 px-10 text-white"># Discussion with students</div>
+                        <div @click="changeId('PVC','C1')" class="hover:bg-teal-dark py-1 px-10 text-white cursor-pointer"># In the class</div>
+                        <div @click="changeId('PVC','C2')" class="hover:bg-teal-dark py-1 px-10 text-white cursor-pointer"># Qestions to Professor</div>
+                        <div @click="changeId('PVC','C3')" class="hover:bg-teal-dark py-1 px-10 text-white cursor-pointer"># Discussion with students</div>
                     </details>
                 </div>            
             </div>
@@ -57,19 +63,18 @@
                 <div class="opacity-75"> 
                     <details>
                         <summary>
-                            Central Limit theorem that even Monkeys can understand
                             <svg class="inline-flex w-6 h-6 text-white right" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                             </svg>
+                            Central Limit theorem that even Monkeys can understand
                         </summary>
-                        <div @click="changeId('CLM','C1')" class="hover:bg-teal-dark py-1 px-10 text-white"># In the class</div>
-                        <div @click="changeId('CLM','C2')" class="hover:bg-teal-dark py-1 px-10 text-white"># Qestions to Professor</div>
-                        <div @click="changeId('CLM','C3')" class="hover:bg-teal-dark py-1 px-10 text-white"># Discussion with students</div>
+                        <div @click="changeId('CLM','C1')" class="hover:bg-teal-dark py-1 px-10 text-white cursor-pointer"># In the class</div>
+                        <div @click="changeId('CLM','C2')" class="hover:bg-teal-dark py-1 px-10 text-white cursor-pointer"># Qestions to Professor</div>
+                        <div @click="changeId('CLM','C3')" class="hover:bg-teal-dark py-1 px-10 text-white cursor-pointer"># Discussion with students</div>
                     </details>
                 </div>            
             </div>
         </div>
-        
     </div>
     <!-- Chat content -->
     <div class="flex-1 flex flex-col bg-gray-900 overflow-hidden">
@@ -293,3 +298,14 @@ export default defineComponent({
     }
 })
 </script>
+<style>
+    summary {
+    cursor: pointer;
+    transition: 0.20s; /* 変化を滑らかに */
+    }
+    /* ホバー時のスタイル */
+    summary:hover {
+    cursor: pointer; /* カーソルを指マークに */
+    background-color: #efefef36;
+    }
+</style>
